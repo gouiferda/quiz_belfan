@@ -10,20 +10,28 @@
     <body> 
         <main>  
             <div class="px-4 py-5 my-5 text-center"> 
-                <h1 class="display-5 fw-bold text-body-emphasis">Answer here</h1>
-                <h1 class="display-5 fw-bold text-body-emphasis">Question here</h1>
+                <h1 class="display-5 fw-bold text-body-emphasis" id="answerield"></h1>
+                <h1 class="display-5 fw-bold text-body-emphasis" id="questionField"></h1>
                 <div class="col-lg-6 mx-auto">
-                    <p class="lead mb-4">Description here</p>
+                    <p class="lead mb-4 invisible" id="scoreArea">Score: <span id="scoreField">0</span></p>
+                    <p class="lead mb-4" id="descriptionField"></p>
                     <div
-                        class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    class="d-grid gap-2 d-sm-flex justify-content-sm-center" id="buttonsFieldStart">
+                    <button type="button"
+                        class="btn btn-warning btn-lg px-4 gap-3" id="btnStart">
+                        Start quiz
+                    </button> 
+                </div>
+                    <div
+                        class="d-grid gap-2 d-sm-flex justify-content-sm-center invisible" id="buttonsFieldsOptions">
                         <button type="button"
-                            class="btn btn-warning btn-lg px-4 gap-3" id="btn1">
-                            Start quiz
+                            class="btn btn-warning btn-lg px-4 gap-3" id="btnOption1">
+                            option 1
                         </button>
-                        <!-- <button type="button"
-                            class="btn btn-secondary btn-lg px-4 invisible">
+                        <button type="button"
+                            class="btn btn-secondary btn-lg px-4" id="btnOption2">
                             option 2
-                        </button> -->
+                        </button>
                     </div>
                 </div>
             </div> 
