@@ -36,24 +36,22 @@ function setElementsVisible () {
 }
 
 function setNextQuestion() {
-  question_got = Object.keys(current_question_obj)[current_question_index];
-  question_obj = current_question_obj[question_got];
-  current_question_obj = question_obj;
-  if (question_obj === undefined || question_obj === null) {
+    question_got = Object.keys(current_question_obj)[current_question_index];
+    question_obj = current_question_obj[question_got];
+    current_question_obj = question_obj; 
     for (let i = 0; i < question_obj.length; i++) {
         answer_got = Object.keys(question_obj[i])[0];
         switch (i) {
-          case 0:
+            case 0:
             btnOption1.innerHTML = answer_got;
             break;
-          case 1:
+            case 1:
             btnOption2.innerHTML = answer_got;
             break;
         }
-    }    
-  } 
-  questionField.innerHTML = question_got;
-  current_question_index = current_question_index + 1;
+    }   
+    questionField.innerHTML = question_got;
+    current_question_index = current_question_index + 1;
 }
 
 function btnStartCLicked () {
