@@ -36,18 +36,19 @@ function setElementsVisible () {
 }
 
 function setNextQuestion() {
-    question_got = Object.keys(current_question_obj)[current_question_index];
-    question_obj = current_question_obj[question_got];
-    current_question_obj = question_obj; 
+    question_got = Object.keys(treeAnsweres)[current_question_index];
+    console.log("question_got : "+question_got)
+    question_obj = treeAnsweres[question_got];
+    // current_question_obj = question_obj; 
     for (let i = 0; i < question_obj.length; i++) {
         answer_got = Object.keys(question_obj[i])[0];
         switch (i) {
             case 0:
-            btnOption1.innerHTML = answer_got;
-            break;
+                btnOption1.innerHTML = answer_got;
+                break;
             case 1:
-            btnOption2.innerHTML = answer_got;
-            break;
+                btnOption2.innerHTML = answer_got;
+                break;
         }
     }   
     questionField.innerHTML = question_got;
