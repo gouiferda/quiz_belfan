@@ -1,14 +1,14 @@
 var treeAnsweres = {
-  'واش تعلمتي شي حاجة ليوم': [
+  "واش تعلمتي شي حاجة ليوم": [
     {
-      نعم: {
+      "نعم": {
         'واش تبغي تشارك معانا': [
-          { نعم: 'تقدر تبدا تكتب أفكارك وتنظمها' },
-          { 'مكنعرفش نكتب': 'تقدر تبدا تقرا باش تعلم تكتب' }
+          { "نعم": "تقدر تبدا تكتب أفكارك وتنظمها" },
+          { "مكنعرفش نكتب": "تقدر تبدا تقرا باش تعلم تكتب" }
         ]
       }
     },
-    { لا: 'واش مهتم تعلم حوايج جداد' }
+    { "لا": "واش مهتم تعلم حوايج جداد" }
   ]
 }
 
@@ -20,6 +20,8 @@ var btnOption1 = document.getElementById('btnOption1')
 var btnOption2 = document.getElementById('btnOption2')
 
 var current_question_index = 0
+var current_chosen_answer = ""
+var current_question_obj = treeAnsweres
 
 function setElementsVisible () {
   if (!buttonsFieldStart.classList.contains('invisible')) {
@@ -33,7 +35,7 @@ function setElementsVisible () {
   }
 }
 
-function setFirstQuestion () {
+function setNextQuestion() {
   question_got = Object.keys(treeAnsweres)[current_question_index]
   question_obj = treeAnsweres[question_got]
   for (let i = 0; i < question_obj.length; i++) {
@@ -53,7 +55,19 @@ function setFirstQuestion () {
 function btnStartCLicked () {
   console.log('btnStart clicked')
   setElementsVisible()
-  setFirstQuestion()
+  setNextQuestion()
+}
+
+function btnOption1Clicked(){
+    current_chosen_answer = btnOption1.innerHTML
+    setNextQuestion()
+}
+
+function btnOption2Clicked(){
+    current_chosen_answer = btnOption2.innerHTML
+    setNextQuestion()
 }
 
 btnStart.addEventListener('click', btnStartCLicked)
+btnOption1.addEventListener('click', btnOption1Clicked)
+btnOption2.addEventListener('click', btnOption2Clicked)
